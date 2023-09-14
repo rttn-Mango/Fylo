@@ -1,0 +1,12 @@
+@forward 'reset';
+@forward './components/custom-properties';
+
+body{
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+
+#root{
+    max-width: 80%;
+    margin-inline: auto;
+}
