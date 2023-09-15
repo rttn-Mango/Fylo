@@ -1,11 +1,13 @@
 export default function TestimoniesCard({content, image, userName, title}){
     return(
         <article className="testimony">
-            <p>{content}</p>
+            <p className="content">{content}</p>
             <div className="testimony__user">
                 <img src={image} alt="User" />
-                <p>{userName}</p>
-                <p>{title}</p>
+                <div>
+                    <p className="name">{userName}</p>
+                    <p className="title">{title}</p>
+                </div>
             </div>
         </article>
     )

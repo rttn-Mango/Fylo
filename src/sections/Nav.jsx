@@ -1,6 +1,6 @@
 export default function Nav(){
     return(
-        <header>
+        <header className="container">
             <nav>
                 <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" /></a>
                 <div>
