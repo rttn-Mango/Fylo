@@ -12,6 +12,12 @@ body{
     flex-direction: $direction;
 }
 
+@mixin gridcontainer($repeatCount){
+    display: grid;
+    grid-template-columns: repeat($repeatCount, minmax(180px, 600px));
+    place-content: center;
+}
+
 .container{
     max-width: clamp(70%, 90%, 1440px);
     margin-inline: auto;
@@ -40,13 +46,16 @@ nav{
 .hero{
     position: relative;
     text-align: center;
-    @include flexbox(column);
-    gap: 3rem;
     padding-block: 5rem;
 
     &__illustration{
         width: 50%;
         align-self: center;
+    }
+
+    & .sub-container{
+        @include flexbox(column);
+        gap: 3rem;
     }
 
     &__group{
@@ -118,7 +127,7 @@ nav{
         }
 
         & h2{
-            font-size: var(--font-size-700);
+            font-size: clamp(1.25rem, 2vw, var(--font-size-900));
             font-weight: var(--font-weight-700);
             margin-block: 3rem 1.5rem;
         }
@@ -142,16 +151,22 @@ nav{
     & .group{
         @include flexbox(column);
         gap: 2rem;
+        position: relative;
+    }
+
+    & .group::before{
+        content: url(src/assets/bg-quotes.png);
+        position: absolute;
+        top: -2.90rem;
     }
 
     & .testimony{
         background-color: var(--clr-testimonial);
         padding: 3rem 2rem;
         border-radius: .5rem;
+        box-shadow: 1px 1px 12px rgba(40, 47, 63, 0.6);
 
-        & .content{
-            padding-bottom: 2rem;
-        }
+        & .content{padding-bottom: 2rem;}
 
         &__user{
             display: flex;
@@ -210,13 +225,14 @@ nav{
             background-image: linear-gradient(to right, var(--clr-accent-cyan), var(--clr-accent-blue));
             font-weight: var(--font-weight-700);
             color: var(--clr-neutral);
+            margin-top: .5rem;
         }
     }
 }
 
 .footer{
     background-color: var(--clr-footer);
-    padding-block: 15rem 2rem;
+    padding-block: 15rem 5rem;
 
     & img{margin-block: 3rem;}
 
@@ -252,6 +268,119 @@ nav{
                 font-size: var(--font-size-700);
             }
         }
+    }
+}
+
+@media(min-width: 40em){
+    .features{
+
+        &__cards{
+            @include gridcontainer(2);
+        }
+    }
+
+    .mid{
+        & .sub-container{
+            @include flexbox(row);
+            gap: 3rem;
+            justify-content: center;
+
+            & img{
+                max-width: 58%;
+            }
+        }
+
+        &__content{
+            align-self: center;
+
+            & h2{max-width: 16ch;}
+
+            & p{max-width: 55ch;}
+        }
+    }
+
+    .testimonies {
+        & .group{
+            @include gridcontainer(3);
+            margin-block: 7rem;
+        }
+    }
+
+    .cta{
+        & .inner-layer{
+            top: -10rem;
+            max-width: 60%;
+            left: 20%;
+        }
+
+        & .inputs{
+            display: flex;
+            gap: 1rem;
+            padding-top: 2rem;
+
+            & button{
+                max-width: 250px;
+                align-self: center;
+            }
+        }
+    }
+
+    .footer{
+
+        & .group{
+            @include flexbox(row);
+            gap: 2rem;
+
+            & nav{
+                @include flexbox(row);
+                padding: 0
+            }
+        }
+
+        & .group__info{
+            @include flexbox(row);
+            gap: 2rem;
+        }
+
+        
+    }
+}
+
+@media(min-width: 640px) and (max-width: 900px){
+    .testimonies {
+        & .group{
+            @include flexbox(column);
+            margin-block: 7rem;
+        }
+    }
+
+    .cta{
+        & .inputs{
+            & button{
+                font-size: var(--font-size-200);
+                padding-inline: .5rem;
+                
+            }
+        }
+    }
+
+    .footer{
+
+        & .group{
+            @include flexbox(column);
+            gap: 2rem;
+
+            &__info{
+                @include flexbox(column);
+                gap: 2rem;
+            }
+
+            & nav{
+                @include flexbox(column);
+                padding: 0
+            }
+        }
+        
     }
 }
 

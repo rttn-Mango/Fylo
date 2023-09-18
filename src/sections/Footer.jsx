@@ -7,20 +7,24 @@ import { GrMail } from 'react-icons/gr';
 export default function Footer() {
     return (
         <footer className="footer">
-            <div className="container">
+            <div className="sub-container | container">
                 <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" /></a>
                 <div className="group">
-                    <div className="group__location">
-                        <span><FaLocationDot/></span>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, asperiores! Accusantium at sint sed eos hic delectus sapiente optio, voluptas, eum tempore atque rerum quisquam fugiat molestiae sequi neque perspiciatis?</p>
-                    </div>
-                    <div className="group__contact">
-                        <span><BiSolidPhoneCall/></span>
-                        <p> +1-543-123-4567</p>
-                    </div>
-                    <div className="group__email">
-                        <span><GrMail/></span>
-                        <p> example@fylo.com</p>
+                    <div className="group__info">
+                        <div className="group__location">
+                            <span><FaLocationDot/></span>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, asperiores! Accusantium at sint sed eos hic delectus sapiente optio, voluptas, eum tempore atque rerum quisquam fugiat molestiae sequi neque perspiciatis?</p>
+                        </div>
+                        <div>
+                            <div className="group__contact">
+                                <span><BiSolidPhoneCall/></span>
+                                <p> +1-543-123-4567</p>
+                            </div>
+                            <div className="group__email">
+                                <span><GrMail/></span>
+                                <p> example@fylo.com</p>
+                            </div>
+                        </div>
                     </div>
                     <nav>
                         <ul role="list">

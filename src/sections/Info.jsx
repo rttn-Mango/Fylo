@@ -1,7 +1,7 @@
 export default function Info(){
     return(
         <section className="mid">
-            <div className="container">
+            <div className="sub-container | container">
                 <img src="src/assets/illustration-stay-productive.png" alt="Stay productive" />
                 <div className="mid__content">
                     <h2>Stay productive, wherever you are</h2>
