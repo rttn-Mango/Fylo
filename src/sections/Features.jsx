@@ -2,7 +2,7 @@ import FeaturesCard from "../components/FeaturesCard"
 
 export default function Features(){
     return(
-        <section className="features">
+        <section className="features" id="features">
             <div className="features__cards | container">
                 <FeaturesCard 
                     image="src/assets/icon-access-anywhere.svg"

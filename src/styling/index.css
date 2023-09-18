@@ -223,7 +223,7 @@ nav a:hover, nav a:focus {
   gap: 2rem;
   position: relative;
 }
-.testimonies .group::before {
+.testimonies .initial-wrapper::before {
   content: url(src/assets/bg-quotes.png);
   position: absolute;
   top: -2.9rem;
@@ -339,6 +339,9 @@ nav a:hover, nav a:focus {
 }
 
 @media (min-width: 40em) {
+  .features {
+    padding-block: 10rem;
+  }
   .features__cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(180px, 600px));
@@ -386,6 +389,10 @@ nav a:hover, nav a:focus {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    justify-content: center;
+  }
+  .footer .group__location p {
+    max-width: 77ch;
   }
   .footer .group__contact {
     padding-block: 0 1rem;

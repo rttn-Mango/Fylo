@@ -1,3 +1,5 @@
+import { HashLink as Link } from "react-router-hash-link"
+
 export default function Nav(){
     return(
         <header className="container">
@@ -5,8 +7,12 @@ export default function Nav(){
                 <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" draggable="false"/></a>
                 <div>
                     <ul role="list">
-                        <li><a href="">Features</a></li>
-                        <li><a href="">Testimonies</a></li>
+                        <Link to="#features">
+                            Features
+                        </Link>
+                        <Link to="#testimonies">
+                            Testimonies
+                        </Link>
                         <li><a href="">Sign In</a></li>
                     </ul>
                 </div>
