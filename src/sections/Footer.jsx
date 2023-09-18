@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="sub-container | container">
-                <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" /></a>
+                <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" draggable="false"/></a>
                 <div className="group">
                     <div className="group__info">
                         <div className="group__location">

@@ -103,13 +103,17 @@ nav {
 nav ul {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
 }
 nav a {
   color: var(--clr-neutral);
   text-decoration: none;
   font-size: clamp(0.8rem, 3vw, var(--font-size-400));
   white-space: nowrap;
+}
+nav a:hover, nav a:focus {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .hero {
@@ -148,6 +152,11 @@ nav a {
   font-weight: var(--font-weight-700);
   background-image: linear-gradient(to right, var(--clr-accent-cyan), var(--clr-accent-blue));
   color: var(--clr-neutral);
+}
+.hero__group button:hover, .hero__group button:focus {
+  cursor: pointer;
+  background-image: none;
+  background-color: var(--clr-accent-cyan);
 }
 .hero .wave {
   position: absolute;
@@ -198,6 +207,10 @@ nav a {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--clr-accent-cyan);
   text-decoration: none;
+}
+.mid__content a:hover, .mid__content a:focus {
+  color: var(--clr-neutral);
+  border-bottom: 1px solid var(--clr-neutral);
 }
 
 .testimonies {
@@ -277,6 +290,11 @@ nav a {
   color: var(--clr-neutral);
   margin-top: 0.5rem;
 }
+.cta .inner-layer button:hover, .cta .inner-layer button:focus {
+  cursor: pointer;
+  background-image: none;
+  background-color: var(--clr-accent-cyan);
+}
 
 .footer {
   background-color: var(--clr-footer);
@@ -314,6 +332,10 @@ nav a {
 }
 .footer .group__socials p {
   font-size: var(--font-size-700);
+}
+.footer .group__socials p:hover, .footer .group__socials p:focus {
+  cursor: pointer;
+  color: var(--clr-accent-cyan);
 }
 
 @media (min-width: 40em) {
@@ -365,6 +387,9 @@ nav a {
     flex-direction: row;
     gap: 2rem;
   }
+  .footer .group__contact {
+    padding-block: 0 1rem;
+  }
   .footer .group nav {
     display: flex;
     flex-direction: row;
@@ -402,7 +427,7 @@ nav a {
     padding: 0;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   nav {
     flex-direction: column;
   }
