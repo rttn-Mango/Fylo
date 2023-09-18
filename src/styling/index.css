@@ -100,6 +100,14 @@ nav {
   padding-block: 3rem;
   gap: 3rem;
 }
+nav .hamburger {
+  display: none;
+}
+nav .hamburger button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 nav ul {
   display: flex;
   flex-direction: row;
@@ -338,6 +346,16 @@ nav a:hover, nav a:focus {
   color: var(--clr-accent-cyan);
 }
 
+/*Hide label on screen but not for screen readers*/
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @media (min-width: 40em) {
   .features {
     padding-block: 10rem;
@@ -434,9 +452,43 @@ nav a:hover, nav a:focus {
     padding: 0;
   }
 }
-@media (max-width: 400px) {
-  nav {
-    flex-direction: column;
+@media (max-width: 550px) {
+  .disabled {
+    overflow: hidden;
+    touch-action: none;
+    pointer-events: none;
+  }
+  nav .hamburger {
+    display: block;
+  }
+  nav .hamburger.active {
+    pointer-events: all;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    gap: 2rem;
+    position: fixed;
+    inset: 0 0 auto auto;
+    min-height: 100vh;
+    width: clamp(20%, 50vw, 50%);
+    padding: 2rem 2rem;
+    background-color: var(--clr-footer);
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  nav .hamburger.active button {
+    justify-self: right;
+  }
+  nav .hamburger.active li {
+    margin-block: 2rem;
+  }
+  nav .hamburger.active li a {
+    font-size: clamp(var(--font-size-200), 1.15rem, var(--font-size-700));
+  }
+  nav .links {
+    display: none;
+  }
+  nav ul {
+    display: block;
   }
 }
 

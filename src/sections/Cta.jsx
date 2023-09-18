@@ -6,7 +6,8 @@ export default function Cta(){
                 <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
                 <form action="">
                     <div className="inputs">
-                        <input type="email" placeholder="email@example.com"/>
+                        <label htmlFor="#email" className="hidden">Email Address</label>
+                        <input type="email" placeholder="email@example.com" name="email" id="email"/>
                         <button type="submit">Get Started for Free</button>
                     </div>
                 </form>
