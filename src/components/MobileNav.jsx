@@ -1,9 +1,10 @@
 import { HashLink as Link } from "react-router-hash-link";
 
 export default function MobileNav(props){
+
     return(
         <>
-            <button onClick={props.toggleNavChange} > <img src="src/assets/hamburger-opened.svg" alt="close nav" data-hidden="true"/> </button>
+            <button type="button" onClick={props.toggleNavChange} > <img src="src/assets/hamburger-opened.svg" alt="close nav" data-hidden="true"/> </button>
             <ul role="list">
                 <li>
                     <Link to="#features" onClick={props.toggleNavChange}>

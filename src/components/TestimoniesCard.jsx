@@ -3,7 +3,7 @@ export default function TestimoniesCard({content, image, userName, title}){
         <article className="testimony">
             <p className="content">{content}</p>
             <div className="testimony__user">
-                <img src={image} alt="User" draggable="false"/>
+                <img src={image} alt="User" draggable="false" loading="lazy"/>
                 <div>
                     <p className="name">{userName}</p>
                     <p className="title">{title}</p>

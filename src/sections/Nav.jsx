@@ -43,7 +43,7 @@ export default function Nav(){
 
                 <div className={mobile ? "hamburger active" : "hamburger"}>
                     {mobile ? 
-                    <MobileNav toggleNavChange={toggleNavChange}/> : <button onClick={toggleNavChange}><img src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button> 
+                    <MobileNav toggleNavChange={toggleNavChange}/> : <button type="button" onClick={toggleNavChange}><img className="icon" src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button> 
                     }
                 </div>
             </nav>

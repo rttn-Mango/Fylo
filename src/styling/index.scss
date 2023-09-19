@@ -32,6 +32,8 @@ nav{
 
     & .hamburger {
         display: none;
+
+        & .inner{opacity: 0}
         & button{
             background-color: transparent;
             border: none;
@@ -460,7 +462,7 @@ nav{
                 min-height: 100vh;
                 width: clamp(20%, 50vw, 50%);
                 padding: 2rem 2rem;
-                background-color: var(--clr-footer);
+                background-image: linear-gradient(to top, var(--clr-neutral), var(--clr-footer));
                 box-shadow: 0 0 0 100vw rgba(0 0 0 / .5);
                 z-index: 999;
 
@@ -468,7 +470,10 @@ nav{
 
                 & li {
                     margin-block: 2rem;
-                    & a{font-size: clamp(var(--font-size-200), 1.15rem, var(--font-size-700));}                   
+                    & a{
+                        font-size: clamp(var(--font-size-200), 1.15rem, var(--font-size-700));
+                        
+                    }                   
                 }
             }
         }
