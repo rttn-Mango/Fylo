@@ -103,9 +103,6 @@ nav {
 nav .hamburger {
   display: none;
 }
-nav .hamburger .inner {
-  opacity: 0;
-}
 nav .hamburger button {
   background-color: transparent;
   border: none;
@@ -475,8 +472,9 @@ nav a:hover, nav a:focus {
     width: clamp(20%, 50vw, 50%);
     padding: 2rem 2rem;
     background-image: linear-gradient(to top, var(--clr-neutral), var(--clr-footer));
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
     z-index: 999;
+    animation: fade-in 0.5s forwards;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
   }
   nav .hamburger.active button {
     justify-self: right;
@@ -492,6 +490,14 @@ nav a:hover, nav a:focus {
   }
   nav ul {
     display: block;
+  }
+  @keyframes fade-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
 }
 

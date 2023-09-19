@@ -25,7 +25,7 @@ export default function Nav(){
         <header className="container">
             <nav>
                 <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" draggable="false"/></a>
-                <div className="links">
+                <div className="links">                 
                     <ul role="list">
                         <li>
                             <Link to="#features">
@@ -38,13 +38,17 @@ export default function Nav(){
                             </Link>
                         </li>
                         <li><a href="">Sign In</a></li>
-                    </ul>
+                    </ul>                   
                 </div>
 
                 <div className={mobile ? "hamburger active" : "hamburger"}>
-                    {mobile ? 
-                    <MobileNav toggleNavChange={toggleNavChange}/> : <button type="button" onClick={toggleNavChange}><img className="icon" src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button> 
+                    {
+                        mobile ? <MobileNav toggleNavChange={toggleNavChange} /> 
+                        : 
+                        <button type="button" onClick={toggleNavChange}><img className="icon" src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button>
                     }
+                    
+
                 </div>
             </nav>
         </header>
