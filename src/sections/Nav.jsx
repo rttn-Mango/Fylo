@@ -1,5 +1,5 @@
 import { HashLink as Link } from "react-router-hash-link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import MobileNav from '../components/MobileNav'
 
 export default function Nav(){
@@ -9,13 +9,13 @@ export default function Nav(){
         setMobile(!mobile);
     }
 
-    const handleMobileChanges = () => {
+    const handleMobileChanges = useCallback(() => {
         if(mobile){
             document.body.classList.add("disabled");
         }else{
             document.body.classList.remove("disabled")
         }
-    }
+    }, [mobile])
 
     useEffect(() => {
         handleMobileChanges()
@@ -25,6 +25,12 @@ export default function Nav(){
         <header className="container">
             <nav>
                 <a href=""><img src="/src/assets/logo.svg" alt="Fylo logo" draggable="false"/></a>
+                {
+                    mobile ? 
+                    null
+                    :
+                    <button className="hamburger-icon" type="button" onClick={toggleNavChange}><img src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button>
+                }
                 <div className="links">                 
                     <ul role="list">
                         <li>
@@ -38,17 +44,11 @@ export default function Nav(){
                             </Link>
                         </li>
                         <li><a href="">Sign In</a></li>
-                    </ul>                   
+                    </ul>                    
                 </div>
 
                 <div className={mobile ? "hamburger active" : "hamburger"}>
-                    {
-                        mobile ? <MobileNav toggleNavChange={toggleNavChange} /> 
-                        : 
-                        <button type="button" onClick={toggleNavChange}><img className="icon" src="src/assets/hamburger-closed.svg" alt="hamburger menu"/> </button>
-                    }
-                    
-
+                    <MobileNav toggleNavChange={toggleNavChange} /> 
                 </div>
             </nav>
         </header>

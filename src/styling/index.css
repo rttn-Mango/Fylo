@@ -458,10 +458,20 @@ nav a:hover, nav a:focus {
     touch-action: none;
     pointer-events: none;
   }
-  nav .hamburger {
-    display: block;
+  nav {
+    position: relative;
   }
-  nav .hamburger.active {
+  nav button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  nav .hamburger {
+    transform: translateX(20rem);
+    transition: transform 300ms linear;
+    position: absolute;
+    display: unset;
+    right: 0;
     pointer-events: all;
     display: grid;
     grid-template-rows: 70px 1fr;
@@ -472,18 +482,20 @@ nav a:hover, nav a:focus {
     width: clamp(20%, 50vw, 50%);
     padding: 2rem 2rem;
     background-image: linear-gradient(to top, var(--clr-neutral), var(--clr-footer));
-    z-index: 999;
-    animation: fade-in 0.5s forwards;
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
-  nav .hamburger.active button {
+  nav .hamburger button {
     justify-self: right;
   }
-  nav .hamburger.active li {
+  nav .hamburger li {
     margin-block: 2rem;
   }
-  nav .hamburger.active li a {
+  nav .hamburger li a {
     font-size: clamp(var(--font-size-200), 1.15rem, var(--font-size-700));
+  }
+  nav .hamburger.active {
+    transform: translateX(0);
+    box-shadow: 0 0 0 150vw rgba(0, 0, 0, 0.3);
   }
   nav .links {
     display: none;
@@ -491,13 +503,10 @@ nav a:hover, nav a:focus {
   nav ul {
     display: block;
   }
-  @keyframes fade-in {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+}
+@media (min-width: 551px) {
+  nav .hamburger-icon {
+    display: none;
   }
 }
 

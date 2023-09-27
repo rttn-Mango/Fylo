@@ -1,10 +1,11 @@
 import { HashLink as Link } from "react-router-hash-link";
+import PropTyes from 'prop-types'
 
 export default function MobileNav({toggleNavChange}){
 
     return(
         <>
-            <button type="button" onClick={toggleNavChange}> <img src="src/assets/hamburger-opened.svg" alt="close nav" data-hidden="true"/> </button>
+            <button type="button" onClick={toggleNavChange}> <img src="src/assets/hamburger-opened.svg" alt="close nav"/> </button>
             <ul role="list">
                 <li>
                     <Link to="#features" onClick={toggleNavChange}>
@@ -20,4 +21,8 @@ export default function MobileNav({toggleNavChange}){
             </ul>
         </>
     )
+}
+
+MobileNav.propTypes ={
+    toggleNavChange: PropTyes.func
 }
