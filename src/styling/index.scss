@@ -308,6 +308,118 @@ nav{
     }
 }
 
+
+//Signin modal
+.modal{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 1;
+    width: 90vw;
+    background-color: hsl(44, 12%, 92%);
+    background-image: url('src/assets/illustration-intro.png');
+    background-repeat: no-repeat;
+    background-position: center -50px;
+    box-shadow: 0 0 200vw black;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    pointer-events: all;
+
+    &.wrapper{
+        position: relative;
+    }
+
+    & button[type="button"]{
+        position: absolute;
+        top: 4rem;
+        right: 5rem;
+        margin: auto;
+        z-index: 999;
+        max-height: 2rem;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    & h2{
+        font-size: clamp(1rem, 4vw ,var(--font-size-900));
+        font-weight: var(--font-weight-700);
+        line-height: 1.2;
+    }
+    & p{
+        font-size: .875rem;
+        padding-bottom: 2.5rem;
+    }
+
+    &__form{
+        &--group{
+            & label{
+                position:absolute;
+                left:-10000px;
+                top:auto;
+                width:1px;
+                height:1px;
+                overflow:hidden;
+            }
+
+            & input{
+                position: relative;
+                margin-bottom: 2rem;
+                padding: 1rem;
+                border: 1px solid #333;
+                box-shadow: 5px 7px 0 rgba(0 0 0 / .7);
+                width: 100%;
+                opacity: .9;
+            }
+        }
+
+        & .checkbox{
+            & input{
+                margin-right: .75rem;
+            }
+
+            & label{
+                font-size: var(--font-size-300);
+                font-weight: var(--font-weight-700);
+                & span{
+                    text-decoration: underline;
+                    font-weight: var(--font-weight-700);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        & button{
+            padding: .35rem 2rem;
+            margin-top: 1rem;
+            border: 0;
+            background-image: linear-gradient(70deg, var(--clr-footer), var(--clr-accent-blue));
+            font-weight: var(--font-weight-700);
+            box-shadow: 3px 5px 0 black;
+            transform: translateY(.25rem);
+            color: var(--clr-neutral);
+            transition: box-shadow 200ms ease-in-out, transform 200ms linear;
+            &:hover, &:focus, &:active{
+                box-shadow:none;
+                transform: translateY(0);
+                opacity: .8;
+            }
+        }
+    }
+
+    & .exit{
+        padding-top: 2rem;
+        & a{color: var(--clr-accent-red);}
+    }
+}
+
+//Disables background actions
+.disabled{
+    overflow: hidden;
+    touch-action: none;
+    pointer-events: none;
+}
+
 /*Hide label on screen but not for screen readers*/
 .hidden{
     position:absolute;
@@ -400,6 +512,8 @@ nav{
 
         
     }
+
+    .modal{width: clamp(500px, 50vw, 60%)}
 }
 
 @media(min-width: 640px) and (max-width: 900px){
@@ -441,12 +555,6 @@ nav{
 }
 
 @media(max-width: 550px){
-    .disabled{
-        overflow: hidden;
-        touch-action: none;
-        pointer-events: none;
-    }
-
     nav{
         position: relative;
 

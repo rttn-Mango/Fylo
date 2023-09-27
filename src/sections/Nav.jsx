@@ -1,10 +1,13 @@
 import { HashLink as Link } from "react-router-hash-link";
 import { useState, useEffect, useCallback } from "react";
 import MobileNav from '../components/MobileNav'
+import Signin from "./Signin";
+import { Route, Routes } from "react-router-dom";
 
 export default function Nav(){
     const [mobile, setMobile] = useState(false);
-
+    let isClicked = false;
+    
     const toggleNavChange = () => {
         setMobile(!mobile);
     }
@@ -43,14 +46,26 @@ export default function Nav(){
                                 Testimonies
                             </Link>
                         </li>
-                        <li><a href="">Sign In</a></li>
+                        <li>
+                            <Link to="signin" onClick={() => {
+                                isClicked = !isClicked;
+                                toggleNavChange();
+                            }}>Sign in</Link>
+                        </li>
                     </ul>                    
                 </div>
 
                 <div className={mobile ? "hamburger active" : "hamburger"}>
-                    <MobileNav toggleNavChange={toggleNavChange} /> 
+                    <MobileNav toggleNavChange={toggleNavChange}/> 
                 </div>
             </nav>
+
+            {
+                isClicked ? null :
+                <Routes>
+                    <Route path="/signin" element={<Signin toggleNavChange={toggleNavChange}/>}/>
+                </Routes>
+            }
         </header>
     )
 }

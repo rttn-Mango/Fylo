@@ -1,6 +1,5 @@
 import { HashLink as Link } from "react-router-hash-link";
 import PropTyes from 'prop-types'
-
 export default function MobileNav({toggleNavChange}){
 
     return(
@@ -17,12 +16,14 @@ export default function MobileNav({toggleNavChange}){
                         Testimonies
                     </Link>
                 </li>
-                <li><a href="">Sign In</a></li>
+                <li>
+                    <Link to="signin" onClick={toggleNavChange}>Sign in</Link>
+                </li>
             </ul>
         </>
     )
 }
 
 MobileNav.propTypes ={
-    toggleNavChange: PropTyes.func
+    toggleNavChange: PropTyes.func,
 }
